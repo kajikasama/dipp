@@ -1,0 +1,224 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+/* navbar */
+nav{
+  display: flex;
+  background: rgb(161, 39, 9);
+  justify-content: space-around;
+  /* padding: 20px 0; */
+  color: rgb(255, 255, 255);
+  height: 50px;
+  align-items: center;
+  l
+}
+
+nav .logo{
+  font-family: 'Roboto';
+  letter-spacing: 3px;
+}
+
+nav ul{
+  display: flex;
+  list-style: none;
+  width: 40%;
+  justify-content: space-between;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: rgb(212, 212, 212);
+  font-size: 0.8em;
+}
+
+nav ul li a:hover{
+  color: rgb(255, 255, 255);
+}
+
+/* hamburger menu */
+.menu-toggle{
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-toggle input{
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  opacity: 0;
+  left: -6px;
+  top: -4px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* hamburger icons */
+.menu-toggle span{
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: rgb(255, 255, 255);
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+/* hamburger animations */
+.menu-toggle span:nth-child(2){
+  /* background: rgb(233, 38, 38); */
+}
+.menu-toggle span:nth-child(4){
+  /* background: rgb(233, 38, 38); */
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+  transform-origin: 0 0;
+  transform: rotate(45deg) translate(-1px,-1px);
+}
+.menu-toggle input:checked ~ span:nth-child(4){
+  transform-origin: 0 100%;
+  transform: rotate(-45deg) translate(-1px,-1px);
+}
+.menu-toggle input:checked ~ span:nth-child(3){
+  transform: scale(0) translate(-1px,0px);
+  opacity: 0;
+}
+
+.container{
+  width: 100%;
+  height: 80vh;
+  background:  linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.9)), url(../img/jacket-final.png);
+  background-size: cover;
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container h4{
+  text-align: center;
+  color: white;
+  font-size: 8vh;
+}
+.container h3{
+  text-align: center;
+  color: white;
+  font-size: 3vh;
+}
+.tombol{
+  width: 400px;
+  height: 120px;
+  /* background: #000; */
+  display: flex;
+  justify-content: space-evenly;
+  /* align-content: center; */
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tombol a{
+  text-decoration: none;
+  color: white;
+  border: 2px solid rgb(211, 67, 0);
+  padding: 10px 10px;
+  border;
+  background: rgb(211, 67, 0);
+}
+
+.kotakputih{
+  width: 100%;
+  height: 30vh;
+}
+
+.biru{
+  border: 2px rgb(48, 115, 241) solid !important;
+  background: rgb(48, 115, 241) !important;
+}
+
+
+
+/* responsive break points */
+
+/* ukuran tablet */
+@media screen and (max-width: 768px){
+  nav ul{
+    width: 50%;
+  }
+  .container{
+    width: 100%;
+    height: 50vh;
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.9)), url(../img/jacket-label.jpg);
+    background-size: cover;
+    /* background-position: 0px -110px; */
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .tombol{
+    margin-top: 20px;
+    flex-direction: column;
+    height: 130px;
+  }
+  
+}
+
+/* ukuran hp */
+@media screen and (max-width: 576px){
+  .nav ul{
+    z-index: 9;
+
+  }
+  .menu-toggle{
+    display: flex;
+  }
+  nav ul{
+    position: absolute;
+    right: 0;
+    top: 50px;
+    height: 100vh;
+    flex-direction: column;
+    background: rgb(121, 66, 4);
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 1;
+    width: 60%;
+    transform: translateX(100%);
+    transition: all 1s;
+    opacity: 0;
+  }
+  
+  nav ul.slide{
+    transform: translate(0); 
+    opacity: 1;
+  }
+  .container{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.9)), url(../img/jacket.jpg);
+    background-size: 100vw;
+    /* background-position: 20px 20px; */
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .tombol{
+    margin-top: 50px;
+    width: 100%;
+    height: 140px;
+  }
+  
+  
+}
+
